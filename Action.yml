@@ -1,0 +1,7 @@
+name: action teste
+description: Ola mundo action
+run$:
+  using: "composite"
+  steps:
+  - run: echo ola mundo
+    shell: bash
