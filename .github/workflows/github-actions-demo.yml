@@ -11,6 +11,30 @@ on:
   workflow_dispatch:
 
 jobs:
+  job01:
+    runs-on: ubuntu-latest
+    environment: Test
+
+    steps:
+    - run: echo 'Testing'
+
+  job02:    
+    needs: job01
+    runs-on: ubuntu-latest
+    environment: Load-Test
+    
+    steps:
+    - run: echo 'Testing'
+
+  job03:  
+    needs: job02
+    runs-on: ubuntu-latest
+    environment: Production
+    
+    steps:
+    - run: echo 'Production'
+
+    
   hellojob:
     runs-on: ubuntu-latest
     
